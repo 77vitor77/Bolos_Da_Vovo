@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "balsamiq-ligth";
+    src: url(../fontes/BalsamiqSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "balsamiq-bolditali";
+    src: url(../fontes/BalsamiqSans-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: "balsamiq-regular";
+    src: url(../fontes/BalsamiqSans-Regular.ttf);
+}
+
+:root {
+    --font-titulo: "Sofia-Regular";
+    --font-subtitulo: "Poppins-Regular";
+    --font-escrita: "Poly-Regular";
+    
+    --color-azul-claro: #b3d4fd;
+    --color-rosa-forte: #ffa6be;
+    --color-rosa-fraco: #FACADA;
+    --color-roxo-claro: #e0afdb;
+    --color-branco:     #FAFAFA;
+
+    
+}
