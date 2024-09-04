@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: var(--color-rosa-forte);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img {
+    width: 100px;
+    height: 100px;
+    background-color: #bbb;
+}
+
+.user-info {
+    text-align: right;
+}
+
+.user-info span {
+    margin-right: 20px;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.cake-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cake-list th, .cake-list td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.cake-list th {
+    background-color: #eee;
+}
+
+.actions a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+.footer {
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
