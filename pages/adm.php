@@ -7,12 +7,12 @@ require __DIR__ . "/../config/config.php";
 //     exit;
 // }
 
-// $sql = $pdo->query("SELECT * FROM Bolo");
-// $sql->execute();
-// if ($sql->rowCount() > 0) {
-//     # trazer todas as pizzas
-//     $dados = $sql->fetchAll(PDO::FETCH_ASSOC);
-// }
+$sql = $pdo->query("SELECT * FROM Bolo");
+$sql->execute();
+if ($sql->rowCount() > 0) {
+    # trazer todas as pizzas
+    $dados = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 
 
@@ -48,22 +48,18 @@ require __DIR__ . "/../config/config.php";
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>BOLO A</td>
-                    <td>Lorem ipsum</td>
-                    <td class="actions">
-                        <a href="#">Editar</a>
-                        <a href="#">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>BOLO B</td>
-                    <td>Lorem ipsum</td>
-                    <td class="actions">
-                        <a href="#">Editar</a>
-                        <a href="#">Excluir</a>
-                    </td>
-                </tr>
+                <?php foreach ($dados as $key => $value): ?>
+                    <tr>
+                        <td><?php echo $value["nomeBolo"]; ?></td>
+                        <td><?php echo $value["valorBolo"]; ?></td>
+                        <td><?php echo $value["descricaoBolo"]; ?></td>
+                        <td class="actions">
+                            <a href="./editar.php?id=<?php echo $value["idBolo"]; ?>">Editar</a>
+                            <span>|</span>
+                            <a href="./excluir_action.php?id=<?php echo $value["idBolo"]; ?>">Excluir</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>

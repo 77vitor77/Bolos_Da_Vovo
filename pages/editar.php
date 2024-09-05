@@ -9,12 +9,13 @@ if (isset($_GET["id"])) {
         $sql = $pdo->prepare("SELECT * FROM Bolo WHERE idBolo=:idBolo");
         $sql->bindValue(":idBolo", $id);
         $sql->execute();
+        setcookie("idBolo", $id, time()+3600);
 
         if($sql->rowCount() > 0){
             $dado = $sql->fetch(PDO::FETCH_ASSOC);                       
         }
         else {
-            header("Location: gerenciaralt.php");
+            header("Location: adm.php");
             exit;
         }      
     }
@@ -26,14 +27,11 @@ if (isset($_GET["id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Pizza</title>  
+    <title>Editar Bolo</title>  
 </head>
 <body>
     <main>
-        <form action="./editar_action.php" method="POST">
-            <div class="form-item">
-                <input type="hidden" name="boloBuscado" value=<?= isset($_POST["idBolo"]) ? $_POST ["idBolo"] : "";?>>               
-            </div>
+        <form action="./editar_action.php" method="POST">            
             <div class="form-item">
                 <label for="nome-pizza">Nome do Bolo:</label>
                 <input type="text" name="nomeBolo" id="nome-bolo" value=<?= isset($dado["nomeBolo"]) ? $dado["nomeBolo"]:"";?>>
